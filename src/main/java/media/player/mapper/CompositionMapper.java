@@ -1,4 +1,4 @@
-package media.player.controller.mapper;
+package media.player.mapper;
 
 import media.player.dto.request.CompositionRequestDto;
 import media.player.model.Composition;

@@ -1,7 +1,7 @@
 package media.player.controller;
 
-import media.player.controller.mapper.CompositionMapper;
-import media.player.controller.mapper.CompositionResponseMapper;
+import media.player.mapper.CompositionMapper;
+import media.player.mapper.CompositionResponseMapper;
 import media.player.dto.request.CompositionRequestDto;
 import media.player.dto.response.CompositionResponseDto;
 import media.player.dto.response.MessageResponseDto;
