@@ -1,11 +1,20 @@
 package media.player.controller;
 
+import media.player.controller.mapper.CompositionMapper;
+import media.player.controller.mapper.CompositionResponseMapper;
+import media.player.dto.request.CompositionRequestDto;
+import media.player.dto.response.CompositionResponseDto;
+import media.player.dto.response.MessageResponseDto;
 import media.player.model.Composition;
 import media.player.service.CompositionService;
-import org.springframework.web.bind.annotation.CrossOrigin;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.http.HttpHeaders;
+import org.springframework.http.HttpStatus;
+import org.springframework.http.ResponseEntity;
+import org.springframework.web.bind.annotation.*;
+import org.springframework.web.multipart.MultipartFile;
+
+import java.util.List;
+import java.util.stream.Collectors;
 
 @RestController
 @CrossOrigin("http://localhost:8081")
@@ -32,7 +41,7 @@ public class CompositionController {
     }
 
     @GetMapping("{id}")
-    public ResponseEntity<byte[]> findById(@PathVariable("id") Long id) {
+    public ResponseEntity<byte[]> findById(@PathVariable("id") String id) {
         Composition composition = compositionService.findById(id);
         return ResponseEntity.ok()
                 .header(HttpHeaders.CONTENT_DISPOSITION, "attachment; filename=\""
@@ -52,9 +61,8 @@ public class CompositionController {
                 .file(file)
                 .name(name)
                 .singer(singer)
-                .squad(group)
-                .gender(genre)
-                .country(country)
+                .band(group)
+                .genre(genre)
                 .year(year)
                 .build();
         String responseMessage = "";

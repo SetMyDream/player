@@ -6,7 +6,7 @@ import lombok.Data;
 @Data
 @Builder
 public class CompositionResponseDto {
-    private Long id;
+    private String id;
     private String name;
     private String originName;
     private String singer;
