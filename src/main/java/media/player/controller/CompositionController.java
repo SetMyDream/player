@@ -1,5 +1,7 @@
 package media.player.controller;
 
+import media.player.model.Composition;
+import media.player.service.CompositionService;
 import org.springframework.web.bind.annotation.CrossOrigin;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -9,7 +11,7 @@ import org.springframework.web.bind.annotation.RestController;
 @CrossOrigin("http://localhost:8081")
 @RequestMapping("/music")
 public class CompositionController {
-    private final CompositionService soongService;
+    private final CompositionService compositionService;
     private final CompositionMapper compositionMapper;
     private final CompositionResponseMapper compositionResponseMapper;
 
